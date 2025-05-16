@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Color Generator</title>
+  <style>
+    body {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeBackgroundColor()">Generate Color Box</button>
+  <script>
+    let blank = "";
+    let hexcode = "123456789ABCDEF";
+    console.log(hexcode[10]);
+
+    function changeBackgroundColor() {
+        let div = document.createElement('div');
+        document.body.appendChild(div);
+        div.style.height = "100px";
+        div.style.width = "100px";
+        div.style.backgroundColor = getRandomColor();
+        document.body.style.display = "flex";
+        div.innerText = "Arif";
+        document.body.style.flexWrap = "wrap";
+    }
+
+    function getRandomColor() {
+        let blank = "#";
+        for (let i = 0; i < 6; i++) {
+            blank += hexcode[Math.floor(Math.random() * hexcode.length)];
+        }
+        return blank;
+    }
+  </script>
+</body>
+</html>
